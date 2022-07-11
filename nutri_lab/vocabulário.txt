@@ -1,0 +1,52 @@
+BASE_DIR = Path(__file__).resolve().parent.parent
+    Raiz do projeto
+
+DEBUG = True
+    Para checar se o nosso projeto está em desenvolvimento ou não
+
+ALLOWED_HOSTS = []
+    Para quando vamos colocar em DEPLOY
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+    Informando qual banco de dados vai ser utilizado
+
+STATIC_URL = 'static/'
+    Onde o django vai procurar pelos arquivos como IMAGEM, CSS, JS
+    - Arquivos estaticos (CSS, IMAGENS, HTML)
+
+'DIRS': [],
+    Onde ficarão os arquivos do TEMPLATE
+    .join - função que faz concatenação de string (imr/im (imr+im))
+
+
+O django trabalha com uma arquitetura chamada "MVT"...
+    - Model
+        Onde faz-se uma camada de conexão com o Banco de Dados
+    - View 
+        Onde fica a lógica do nosso projeto
+    - Tamplate
+        Onde se trabalha com a INTERFACE entre o USUÁRIO e a APLICAÇÃO (HTML, CSSS e JS)
+
+O django segue a filosofia de "DIVIDIR PARA CONQUISTAR"
+
+Pasta "autenticacao"
+    Onde é dividido os problemas em pequenas partes 
+
+return render - resposta "http", que renderiza um arquivo HTML.
+
+
+No fluxo de uma aplicação django...
+    As urls direcionam a outras "urls" que automaticamente direciona para um outro "app", que redireciona a uma "view", a "view" recebe a "request" como parâmetro de uma "função" e "retorna" uma "response", e as vezes essas "responses" podem "renderizar" um "arquivo html", e esse "arquivo html" normalmemte tem um "arquivos estáticos" que herda de um "arquivo base" (base.html), onde temos os "blocos" e alguns "arquivos estáticos" que podemos colocar dentro da pasta "static". 
+
+
+Requisições de http:
+    - POST
+    - GET
+    - PUT
+    - DELETE
+    - PATH

@@ -1,0 +1,15 @@
+# path - função do django que perimite criarmos uma nova url
+# urlpatterns - variavel onde é colocada as urls
+
+from unicodedata import name
+from django.urls import path
+from . import views
+
+
+urlpatterns = [
+    path('cadastro/', views.cadastro, name="cadastro"),
+    path('logar/', views.logar, name="logar"),
+    path('sair/', views.sair, name="sair"),
+    path('ativar_conta/<str:token>/', views.ativar_conta, name="ativar_conta")
+    
+]
